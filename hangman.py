@@ -6,7 +6,7 @@ def get_word():
     return word.upper()
 
 def play(word):
-    word_completion = "_" * len(word)  # Initialize with underscores
+    word_completion = "_" * len(word) 
     guessed = False
     guessed_letters = []
     guessed_words = []
@@ -16,7 +16,7 @@ def play(word):
     print("\n")
 
     while not guessed and tries > 0:
-        print("Current word: ", " ".join(word_completion))  # Display with spaces
+        print("Current word: ", " ".join(word_completion))  
         guess = input("Please guess a letter or word: ").upper()
 
         if len(guess) == 1 and guess.isalpha():
@@ -32,7 +32,7 @@ def play(word):
                 word_as_list = list(word_completion)
                 indices = [i for i, letter in enumerate(word) if letter == guess]
                 for index in indices:
-                    word_as_list[index] = guess  # Update the correct index
+                    word_as_list[index] = guess 
                 word_completion = "".join(word_as_list)
                 if "_" not in word_completion:
                     guessed = True
